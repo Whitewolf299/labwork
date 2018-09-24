@@ -1,0 +1,38 @@
+﻿1>------ Build started: Project: ADTs, Configuration: Debug x64 ------
+1>main.cpp
+1>c:\users\sylva\desktop\my_github(whitewolf299)\labwork\lab5\adts\adts\indexedcollection.h(9): warning C4584: 'IndexedCollection<T>': base-class 'Collection<T>' is already a base-class of 'Indexed<T>'
+1>c:\users\sylva\desktop\my_github(whitewolf299)\labwork\lab5\adts\adts\indexedcollection.h(10): note: see reference to class template instantiation 'IndexedCollection<T>' being compiled
+1>c:\users\sylva\desktop\my_github(whitewolf299)\labwork\lab5\adts\adts\randomnumbergenerator.h(14): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+1>c:\users\sylva\desktop\my_github(whitewolf299)\labwork\lab5\adts\adts\indexedcollection.h(9): warning C4584: 'IndexedCollection<T>': base-class 'Collection<T>' is already a base-class of 'Indexed<T>'
+1>        with
+1>        [
+1>            T=BinaryNode<int> *
+1>        ]
+1>c:\users\sylva\desktop\my_github(whitewolf299)\labwork\lab5\adts\adts\indexedcollection.h(8): note: see declaration of 'Collection<T>'
+1>        with
+1>        [
+1>            T=BinaryNode<int> *
+1>        ]
+1>c:\users\sylva\desktop\my_github(whitewolf299)\labwork\lab5\adts\adts\indexedcollection.h(8): note: see declaration of 'Indexed<T>'
+1>        with
+1>        [
+1>            T=BinaryNode<int> *
+1>        ]
+1>c:\users\sylva\desktop\my_github(whitewolf299)\labwork\lab5\adts\adts\vector.h(11): note: see reference to class template instantiation 'IndexedCollection<T>' being compiled
+1>        with
+1>        [
+1>            T=BinaryNode<int> *
+1>        ]
+1>c:\users\sylva\desktop\my_github(whitewolf299)\labwork\lab5\adts\adts\circularqueue.h(17): note: see reference to class template instantiation 'Vector<T>' being compiled
+1>        with
+1>        [
+1>            T=BinaryNode<int> *
+1>        ]
+1>c:\users\sylva\desktop\my_github(whitewolf299)\labwork\lab5\adts\adts\binarysearchtree.h(239): note: see reference to class template instantiation 'CircularQueue<BinaryNode<int> *>' being compiled
+1>c:\users\sylva\desktop\my_github(whitewolf299)\labwork\lab5\adts\adts\binarysearchtree.h(238): note: while compiling class template member function 'BinarySearchTree<int>::~BinarySearchTree(void)'
+1>c:\users\sylva\desktop\my_github(whitewolf299)\labwork\lab5\adts\main.cpp(84): note: see reference to function template instantiation 'BinarySearchTree<int>::~BinarySearchTree(void)' being compiled
+1>c:\users\sylva\desktop\my_github(whitewolf299)\labwork\lab5\adts\main.cpp(84): note: see reference to class template instantiation 'BinarySearchTree<int>' being compiled
+1>c:\users\sylva\desktop\my_github(whitewolf299)\labwork\lab5\adts\main.cpp(20): warning C4172: returning address of local variable or temporary: t2
+1>ADTs.vcxproj -> C:\Users\sylva\Desktop\my_github(Whitewolf299)\labwork\lab5\ADTs\x64\Debug\ADTs.exe
+1>Done building project "ADTs.vcxproj".
+========== Build: 1 succeeded, 0 failed, 0 up-to-date, 0 skipped ==========
