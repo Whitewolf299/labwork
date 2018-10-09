@@ -67,14 +67,17 @@ bool isFull(BinarySearchTree<int> *tree)
     return false;
 }
 
-void levelhelper(queue<BinaryNode<int>*> tree)
+void levelhelper(queue<BinaryNode<int>*> nodes)
 {
-
+	BinaryNode<int>* node;
+	node = 
 }
 
 void levelOrderTraversal(BinarySearchTree<int> *tree)
 {
 	queue<BinaryNode<int>*> nodes;
+		nodes.push(tree->getRoot);
+		levelhelper(nodes);
 }
 
 bool isComplete(BinarySearchTree<int>* tree)
