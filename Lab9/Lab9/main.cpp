@@ -112,18 +112,18 @@ void task2()
 
 }
 
-void task3()
+string task3(int priority)
 {
 	int power = 1;
 	string output;
 	int mask = 1;
-	if (n == 0)
+	if (priority == 0)
 	{
 		return "0";
 	}
-	while (mask <= n)
+	while (mask <= priority)
 	{
-		int digit = (n / mask) % 2;
+		int digit = (priority / mask) % 2;
 		if (digit == 1)
 		{
 			output = "1" + output;
@@ -135,6 +135,7 @@ void task3()
 		mask = pow(2, power);
 		power++;
 	}
+	return output;
 }
 
 void task5()
