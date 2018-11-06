@@ -1,0 +1,3 @@
+﻿  main.cpp
+c:\users\sylva\desktop\my_github(whitewolf299)\labwork\lab11\lab11\lab11\main.cpp(15): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+  lab11.vcxproj -> C:\Users\sylva\Desktop\my_github(Whitewolf299)\labwork\lab11\lab11\x64\Debug\lab11.exe
