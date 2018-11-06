@@ -1,0 +1,7 @@
+﻿  main.cpp
+c:\users\sjb747\desktop\bin\labwork\lab10\lab10\lab10\main.cpp(21): warning C4018: '<': signed/unsigned mismatch
+c:\users\sjb747\desktop\bin\labwork\lab10\lab10\lab10\main.cpp(51): warning C4018: '<': signed/unsigned mismatch
+c:\users\sjb747\desktop\bin\labwork\lab10\lab10\lab10\main.cpp(64): warning C4018: '<': signed/unsigned mismatch
+c:\users\sjb747\desktop\bin\labwork\lab10\lab10\lab10\main.cpp(89): warning C4018: '>': signed/unsigned mismatch
+c:\users\sjb747\desktop\bin\labwork\lab10\lab10\lab10\main.cpp(96): warning C4018: '<': signed/unsigned mismatch
+  lab10.vcxproj -> C:\Users\sjb747\Desktop\bin\labwork\lab10\lab10\Debug\lab10.exe
