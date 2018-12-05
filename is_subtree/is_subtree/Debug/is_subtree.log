@@ -1,0 +1,2 @@
+﻿  main.cpp
+c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.12.25827\include\collection.h(15): fatal error C1189: #error:  collection.h requires the /ZW compiler option.
