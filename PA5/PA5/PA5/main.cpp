@@ -84,14 +84,14 @@ int main(void)
 					all_movies[some_movie->getId()] = some_movie;
 				}
 				some_movie = all_movies[movie_id];
-				
+
 				//finally, connect actors to movies and movies to actors
 				some_actor->addMovie(some_movie);
 				some_movie->addActor(some_actor);
 			}
 		}
 	}
-	
+
 	string cin_actor_id;
 	int I = 0;
 	cout << " Please enter an actor ID (for example nm0000010 ): ";
@@ -106,8 +106,7 @@ int main(void)
 	}
 	cout << endl;
 	string repeat, actor_id_1, actor_id_2;
-	cout << " Would you like to connect to actors (yes/no): ";
-	getline(cin, repeat);
+	cout << " You are about to connect two actors: ";
 
 	queue<string> connection;
 	queue<int> degrees_queue;
@@ -117,10 +116,9 @@ int main(void)
 	vector<Actor*> movies_actors;
 
 
-	while (repeat == "yes")
-	{
-		cout <<endl << " what is the first actors Id : ";
-			getline(cin, actor_id_1);
+
+		cout << endl << " what is the first actors Id : ";
+		getline(cin, actor_id_1);
 		cout << endl << " What is the second actors Id : ";
 		getline(cin, actor_id_2);
 		connection.push(actor_id_1);
@@ -128,7 +126,6 @@ int main(void)
 		is_connected = 0;
 		while (connection.empty() == false)
 		{
-
 
 			if (current_id == actor_id_2)
 			{
@@ -141,14 +138,13 @@ int main(void)
 			}
 			else
 			{
-
 				current_id = connection.front();
 				current_degree = degrees_queue.front();
 
-				 connection.pop();
-				 degrees_queue.pop();				
-				
-				
+				connection.pop();
+				degrees_queue.pop();
+
+
 				while (has_seen.count(current_id) == 1 && connection.size() > 0)
 				{
 					current_id = connection.front();
@@ -160,9 +156,9 @@ int main(void)
 				}
 
 
-				 int i = 0;
+				int i = 0;
 				actors_movies = all_actors[current_id]->getMovies();
-				for(auto items : actors_movies)
+				for (auto items : actors_movies)
 				{
 					movies_actors = actors_movies[i]->getActors();
 					int x = 0;
@@ -191,20 +187,17 @@ int main(void)
 			cout << "no these actors are not connected" << endl;
 
 		}
+
+
+		cout << endl;
 	
-		cout << "Would you like to try two different actors (yes/no): ";
-			getline(cin, repeat);
-			cout << endl;
-	}
 
-	cout << "Would you like to connect two actors with a set degree of distance (yes/no)";
-	getline(cin, repeat);
+	cout << "You will now be connecting two actors with a set degree of distance ";
 
-		while (repeat == "yes")
-	{
-			is_connected = 0;
+	
+		is_connected = 0;
 		cout << " what is the first actor's Id : ";
-			getline(cin, actor_id_1);
+		getline(cin, actor_id_1);
 		cout << endl << " What is the second actor's Id : ";
 		getline(cin, actor_id_2);
 		cout << endl << "Great what is the degree of distance : ";
@@ -213,7 +206,7 @@ int main(void)
 		connection.push(actor_id_1);
 		degrees_queue.push(0);
 
-		for(int f = 0 ;f < input_degree ; f++ )
+		for (int f = 0; f < input_degree; f++)
 		{
 
 
@@ -226,47 +219,47 @@ int main(void)
 					degrees_queue.pop();
 				}
 			}
-			else 
-				if(connection.size() > 0)
-			{
-
-				current_id = connection.front();
-				current_degree = degrees_queue.front();
-
-				 connection.pop();
-				 degrees_queue.pop();				
-				
-				
-				while (has_seen.count(current_id) == 1 && connection.size() > 0)
+			else
+				if (connection.size() > 0)
 				{
+
 					current_id = connection.front();
 					current_degree = degrees_queue.front();
 
 					connection.pop();
 					degrees_queue.pop();
 
-				}
 
-
-				 int i = 0;
-				actors_movies = all_actors[current_id]->getMovies();
-				for(auto items : actors_movies)
-				{
-					movies_actors = actors_movies[i]->getActors();
-					int x = 0;
-					for (auto items : movies_actors)
+					while (has_seen.count(current_id) == 1 && connection.size() > 0)
 					{
-						if (has_seen.count(current_id) != 1)
-						{
-							connection.push(movies_actors[x]->getId());
-							degrees_queue.push(current_degree + 1);
-						}
-						x++;
-					}
-					i++;
-				}
+						current_id = connection.front();
+						current_degree = degrees_queue.front();
 
-			}
+						connection.pop();
+						degrees_queue.pop();
+
+					}
+
+
+					int i = 0;
+					actors_movies = all_actors[current_id]->getMovies();
+					for (auto items : actors_movies)
+					{
+						movies_actors = actors_movies[i]->getActors();
+						int x = 0;
+						for (auto items : movies_actors)
+						{
+							if (has_seen.count(current_id) != 1)
+							{
+								connection.push(movies_actors[x]->getId());
+								degrees_queue.push(current_degree + 1);
+							}
+							x++;
+						}
+						i++;
+					}
+
+				}
 			has_seen[current_id] = 1;
 
 		}
@@ -278,38 +271,40 @@ int main(void)
 		{
 			cout << "no these actors are not connected within " << input_degree << " degrees " << endl;
 		}
-	
-		cout << "Would you like to try two different actors (yes/no): ";
-			getline(cin, repeat);
-			cout << endl;
-	}
 
+		cout << endl;
+	
+
+
+
+		
 		string task_5_repeate, new_actor_id, new_degree;
-		int int_new_degree;
+		int int_new_degree = 1, max_degree;
 		queue<string> Related_actors;
 		vector<Movie*> Related_movies;
 		vector<Actor*> Degree_of_actors;
 		unordered_map<string, int> Related_actor_degrees, actors_have_seen;
-		cout << "Would you like to List using associated degree(yes/no): ";
-		getline(cin, task_5_repeate);
+		cout << "you will now be starting associative degrees  ";
 
-		while (task_5_repeate == "yes")
-		{
+
+
 			cout << endl << "Enter Actor id: ";
 			getline(cin, new_actor_id);
 			cout << endl << "Enter Max Degree: ";
 			getline(cin, new_degree);
-			int_new_degree = stoi(new_degree);
+			max_degree = stoi(new_degree) + 1;
 		
 			// couting the actors name
 			cout << endl << "Actor : " << all_actors[new_actor_id]->getName()
 				<< endl;
 
+
 			//getting the first degrees of actors
+			actors_have_seen[new_actor_id]++;
 			Related_movies = all_actors[new_actor_id]->getMovies();
 			for (auto actors : Related_movies)
 			{
-				Degree_of_actors = actors->getActors();
+				Degree_of_actors = all_movies[actors->getId()]->getActors();
 
 				for (auto acts : Degree_of_actors)
 				{
@@ -317,17 +312,65 @@ int main(void)
 					{
 						actors_have_seen[acts->getId()]++;
 						Related_actors.push(acts->getId());
+						Related_actor_degrees[acts->getId()] = int_new_degree;
 					}
 				}
-
 			}
 
+			while (int_new_degree < max_degree)
+			{
+				if (Related_actors.size() < 1)
+				{
+					int temp = int_new_degree;
+					for (int x = temp; x < max_degree; x++, int_new_degree++)
+					{
+						cout << "Degree[" << x << "] : NONE* " << endl;
+					}
+					break;
+				}
+				cout << endl << "Degree [" << int_new_degree << "] actors : ";
+				int_new_degree++;
+				while (Related_actor_degrees[Related_actors.front()] < int_new_degree)
+				{
+					if (Related_actors.size() < 1)
+					{
+						int temp = int_new_degree;
+						for (int x = temp; x < max_degree; x++, int_new_degree++)
+						{
+							cout << "Degree[" << x << "] : NONE* " << endl;
+						}
+						break;
+					}
+					else
+					{
+						cout << all_actors[Related_actors.front()]->getName() << ", ";
+						Related_movies = all_actors[Related_actors.front()]->getMovies();
+						actors_have_seen[Related_actors.front()]++;
+						Related_actors.pop();
+						for (auto actors : Related_movies)
+						{
+							Degree_of_actors = all_movies[actors->getId()]->getActors();
 
+							for (auto acts : Degree_of_actors)
+							{
+								if (actors_have_seen[acts->getId()] < 1)
+								{
+									actors_have_seen[acts->getId()]++;
+									Related_actors.push(acts->getId());
+									Related_actor_degrees[acts->getId()] = int_new_degree;
+								}
+							}
+						}
+					}
 
+					if (Related_actors.size() < 1)
+					{
+						break;
+					}
 
+				}
+			}
+			cout << endl << endl << "Thankyou for using our service!!!!  Goodbye " << endl;
 		
-		
-		
-		}
 		return 0;
 }
